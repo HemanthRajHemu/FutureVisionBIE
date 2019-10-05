@@ -319,6 +319,8 @@ input[type=visit]:hover {
 	text-align: justify;
 	background-color: lightblue;
 	margin-top: 15px;
+	font-family:Bookman Old Style; 
+	font-size:15px;
 	
 	margin: auto;
     height:auto;
@@ -361,6 +363,8 @@ input[type=visit]:hover {
 			border-radius: 20px;
 			padding:15px;
 			margin: auto;
+			font-family:Bookman Old Style; 
+			font-size:20px;
 		 }
 
 		 .QAS a:hover {
@@ -388,4 +392,11 @@ input[type=visit]:hover {
 .active, .btn:hover {
   background-color: #666;
   color: white;
+}
+
+.code {
+	color:#bf8040; 
+	font-family:Consolas; 
+	font-size:15px; 
+	
 }
