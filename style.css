@@ -58,7 +58,7 @@ article {
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
   animation-name: animatebottom;
-  animation-duration: 1s
+  animation-duration: 2s
 }
 
 @-webkit-keyframes animatebottom {
@@ -257,6 +257,7 @@ li a:hover {
 		 } 
 
 
+
 <!--- Visit Button--->
 label {
     padding: 12px 12px 12px 0;
@@ -304,4 +305,80 @@ input[type=visit]:hover {
     float: left;
     width: 75%;
     margin-top: 6px;
+}
+
+.ansclass{
+	width:85%;
+	padding: 10px 10px;
+	text-align: justify;
+	background-color: lightblue;
+	margin-top: 15px;
+	
+	margin: auto;
+    height:auto;
+    overflow:auto;
+	
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+	
+}
+
+#ANScript1 {
+  display: none;
+}
+#ANScript2 {
+  display: none;
+}
+#ANScript3 {
+  display: none;
+}
+#ANScript4 {
+  display: none;
+}
+#ANScript5 {
+  display: none;
+}
+
+	.QAS a {
+			display: block;
+			color: #000;
+			padding: 8px 16px;
+			text-decoration: none;
+			background-color: #c9c3c4;
+			border:4px dashed #650ee8;
+			border-radius: 20px;
+			padding:15px;
+			margin: auto;
+		 }
+
+		 .QAS a:hover {
+			background-color: #555;
+			color: white;
+			text-align:center;
+		 } 
+
+.resIMG {
+  max-width: 100%;
+  height: auto;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
 }
