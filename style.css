@@ -366,7 +366,10 @@ input[type=visit]:hover {
 			font-family:Bookman Old Style; 
 			font-size:25px;
 		 }
-
+	.QAS h1 {
+			font-family:Bookman Old Style; 
+			font-size:25px;
+	}
 		 .QAS a:hover {
 			background-color: #555;
 			color: white;
