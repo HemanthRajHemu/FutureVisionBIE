@@ -28,6 +28,7 @@ function myFunction1() {
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
+  document.getElementById("loaderInfo").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
 
@@ -41,7 +42,11 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-<div id="loader"></div>
+<div id="loader"> </div>
+<div id="loaderInfo" style="display:block; width: 150px;
+  height: 150px; position: absolute;
+  left: 45%;
+  top: 60%;"><h3>Loading PDF... </h3> </div>
 <div style="display:none;" id="myDiv" class="animate-bottom">
 <div id="main">
 <div class="container">
