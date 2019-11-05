@@ -498,7 +498,9 @@ input[type=visit]:hover {
 	color:green;
 }
 
-
+article h1{
+	color:green;
+}
 /* Style the buttons */
 .btn {
   border: none;
