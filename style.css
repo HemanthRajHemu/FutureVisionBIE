@@ -580,22 +580,3 @@ input[type=visit]:hover {
   color: black;
 }
 /*------------------------------- END ALERT --------------------------------------*/
-/*------------------------------- TABLE START --------------------------------------*/
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  text-align: center;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f0bcf5}
-tr:nth-child(odd){background-color: #f8e1fa}
-
-th {
-  background-color: #7c0587;
-  color: white;
-}
-/*------------------------------- END TABLE --------------------------------------*/
