@@ -113,17 +113,33 @@ Program 9 <br/>
 <h1>
 <p>
 Program 9 <br/>
-Using TCP/IP sockets, write a client ­ server program to make the client send the file
+Using TCP/IP sockets, write a client - server program to make the client send the file
 name and to make the server send back the contents of the requested file if present.<br/>
 </p>
 </h1>
 </div><br/><br/>
 
+<h1 class="head">Process to Execute the Program</h1>
+<p>
+Step 1: We need to have Java JDK installed, So That Java Programs can Run.<br/>
+Step 2: Copy & Paste the Below Code of TCPServer.java & TCPClient.java.<br/>
+Step 3: or simple Download the Source Code.<br/>
+Step 4: Open Command Prompt (cmd).<br/>
+Step 5: Navigate to the TCPServer.java & TCPClient.java File location.<br/>
+Step 6: Use CD & DIR command on cmd to navigate.<br/>
+Step 7: First Run the TCPServer.java => javac TCPServer.java<br/>
+Step 8: => java TCPServer<br/>
+Step 9: Now Run TCPClient.java => javac TCPClient.java <br/>
+Step 10: => java TCPClient<br/>
+Step 11:<br/>
+</p>
+
+
 <!-- CODE  -->
 
 <h1 class="head">TCPServer.java</h1>
 
-<!-- HTML generated using hilite.me --><div class="JCODE" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div class="JCODE" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0;color:#a19c9c; line-height: 125%"> 1
  2
  3
  4
@@ -149,38 +165,92 @@ name and to make the server send back the contents of the requested file if pres
 24
 25
 26
-27</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.*</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.net.ServerSocket</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.net.Socket</span><span style="color: #333333">;</span>
-<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">TCPServer</span>
-<span style="color: #333333">{</span>
-	<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String args<span style="color: #333333">[])</span> <span style="color: #008800; font-weight: bold">throws</span> Exception
-	<span style="color: #333333">{</span>
-		ServerSocket sersock <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ServerSocket<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">4000</span><span style="color: #333333">);</span>
-		System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Server ready for connection&quot;</span><span style="color: #333333">);</span>
-		Socket sock <span style="color: #333333">=</span> sersock<span style="color: #333333">.</span><span style="color: #0000CC">accept</span><span style="color: #333333">();</span>
-		System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Connection successful | wating for filename&quot;</span><span style="color: #333333">);</span>
-		InputStream istream <span style="color: #333333">=</span> sock<span style="color: #333333">.</span><span style="color: #0000CC">getInputStream</span><span style="color: #333333">(</span> <span style="color: #333333">);</span>
-		BufferedReader br <span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">new</span> BufferedReader<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> InputStreamReader<span style="color: #333333">(</span>istream<span style="color: #333333">));</span>
-		String fname <span style="color: #333333">=</span> br<span style="color: #333333">.</span><span style="color: #0000CC">readLine</span><span style="color: #333333">(</span> <span style="color: #333333">);</span>
-		BufferedReader contentRead <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> BufferedReader<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> FileReader<span style="color: #333333">(</span>fname<span style="color: #333333">)</span> <span style="color: #333333">);</span>
-		OutputStream ostream <span style="color: #333333">=</span> sock<span style="color: #333333">.</span><span style="color: #0000CC">getOutputStream</span><span style="color: #333333">(</span> <span style="color: #333333">);</span>
-		PrintWriter pwrite <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> PrintWriter<span style="color: #333333">(</span>ostream<span style="color: #333333">,</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">);</span>
-		String str<span style="color: #333333">;</span>
-		<span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">((</span>str <span style="color: #333333">=</span> contentRead<span style="color: #333333">.</span><span style="color: #0000CC">readLine</span><span style="color: #333333">())</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">)</span>
-		<span style="color: #333333">{</span>
-			pwrite<span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>str<span style="color: #333333">);</span>
-		<span style="color: #333333">}</span>
-		System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;File Contents sent successfully&quot;</span><span style="color: #333333">);</span>
-		sock<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span> sersock<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
-		pwrite<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span> br<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span> contentRead<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
-	<span style="color: #333333">}</span>
-<span style="color: #333333">}</span>
+27</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.*</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.net.ServerSocket</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.net.Socket</span><span style="color: #f92672">;</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TCPServer</span>
+<span style="color: #f92672">{</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">[])</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">Exception</span>
+	<span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">ServerSocket</span> <span style="color: #f8f8f2">sersock</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ServerSocket</span><span style="color: #f92672">(</span><span style="color: #ae81ff">4000</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Server ready for connection&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">Socket</span> <span style="color: #f8f8f2">sock</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sersock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">accept</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Connection successful | wating for filename&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">InputStream</span> <span style="color: #f8f8f2">istream</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getInputStream</span><span style="color: #f92672">(</span> <span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">BufferedReader</span> <span style="color: #f8f8f2">br</span> <span style="color: #f92672">=</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">InputStreamReader</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">istream</span><span style="color: #f92672">));</span>
+		<span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">fname</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">br</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readLine</span><span style="color: #f92672">(</span> <span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">BufferedReader</span> <span style="color: #f8f8f2">contentRead</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileReader</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">fname</span><span style="color: #f92672">)</span> <span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">OutputStream</span> <span style="color: #f8f8f2">ostream</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getOutputStream</span><span style="color: #f92672">(</span> <span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">PrintWriter</span> <span style="color: #f8f8f2">pwrite</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">PrintWriter</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">ostream</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">str</span><span style="color: #f92672">;</span>
+		<span style="color: #66d9ef">while</span><span style="color: #f92672">((</span><span style="color: #f8f8f2">str</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">contentRead</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readLine</span><span style="color: #f92672">())</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span>
+		<span style="color: #f92672">{</span>
+			<span style="color: #f8f8f2">pwrite</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">str</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;File Contents sent successfully&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">sock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">sersock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">pwrite</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">br</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">contentRead</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span>
 </pre></td></tr></table></div>
 
 
 <h1 class="head">TCPClient.java</h1>
 
+<!-- HTML generated using hilite.me --><div class="JCODE" style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0;color:#a19c9c; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.net.*</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.*</span><span style="color: #f92672">;</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">TCPClient</span>
+<span style="color: #f92672">{</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">[</span> <span style="color: #f92672">]</span> <span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">Exception</span>
+	<span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">Socket</span> <span style="color: #f8f8f2">sock</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Socket</span><span style="color: #f92672">(</span> <span style="color: #e6db74">&quot;127.0.0.1&quot;</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">4000</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Enter the file name\n&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">BufferedReader</span> <span style="color: #f8f8f2">br</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">InputStreamReader</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">in</span><span style="color: #f92672">));</span>
+		<span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">fname</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">br</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readLine</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">OutputStream</span> <span style="color: #f8f8f2">ostream</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getOutputStream</span><span style="color: #f92672">(</span> <span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">PrintWriter</span> <span style="color: #f8f8f2">pwrite</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">PrintWriter</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">ostream</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">pwrite</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">fname</span><span style="color: #f92672">);</span>
+
+		<span style="color: #f8f8f2">InputStream</span> <span style="color: #f8f8f2">istream</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getInputStream</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">BufferedReader</span> <span style="color: #f8f8f2">socketRead</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span>
+		<span style="color: #f8f8f2">InputStreamReader</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">istream</span><span style="color: #f92672">));</span>
+		<span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">str</span><span style="color: #f92672">;</span>
+
+		<span style="color: #66d9ef">while</span><span style="color: #f92672">((</span><span style="color: #f8f8f2">str</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">socketRead</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readLine</span><span style="color: #f92672">())</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #75715e">// reading line-by-line</span>
+		<span style="color: #f92672">{</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">str</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+
+		<span style="color: #f8f8f2">pwrite</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">socketRead</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">br</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">sock</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span>
+</pre></td></tr></table></div>
 
 
 
@@ -195,23 +265,7 @@ name and to make the server send back the contents of the requested file if pres
 <hr/>
 
 
-<!--PAGE--><br/>
- <center>
-<div id="showPGE">
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_SYS.html'">SYS</button>
-  <button class="btn active" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_M1.html'">T-1</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_M2.html'">T-2</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_M3.html'">T-3</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_M4.html'">T-4</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_M5.html'">T-5</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_QB_M1.html'">QB - 1</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_QB_M2.html'">QB - 2</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_QB_M3.html'">QB - 3</button>
-  <button class="btn" onclick="window.location.href='https://hemanthrajhemu.github.io/FutureVisionBIE/WP/5CSE/AI_QB_M4.html'">QB - 4</button>
-   
-</div>
-</center>
-<br/><br/>
+
 
     <div class="alertA1">
   <span class="closebtnA1" onclick="this.parentElement.style.display='none';">&times;</span> 
