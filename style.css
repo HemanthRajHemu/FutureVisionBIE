@@ -272,6 +272,9 @@ li a:hover {
   div.desp{
 	  font-size: 20px;
   }
+    div.proc{
+	  font-size: 18px;
+  }
   div.callout{
 	  bottom: 35px;
 	  right: 20px;
@@ -312,6 +315,9 @@ li a:hover {
   }
   div.desp{
 	  font-size: 15px;
+  }
+  div.proc{
+	  font-size: 12px;
   }
   div.callout{
 	  bottom: 5px;
@@ -369,6 +375,9 @@ li a:hover {
 		color: black;
 }
 
+.proc p{
+	font-family: courier;
+}
 
 /*--- Visit Button--*/
 label {
