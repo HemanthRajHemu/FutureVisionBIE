@@ -484,6 +484,7 @@ input[type=visit]:hover {
 	.QAS h1 {
 			font-family:Bookman Old Style; 
 			font-size:20px;
+			color: #4fed00;
 	}
 		 .QAS a:hover {
 			background-color: #555;
@@ -512,9 +513,7 @@ input[type=visit]:hover {
 	color:green;
 }
 
-article h1{
-	color:green;
-}
+
 /* Style the buttons */
 .btn {
   border: none;
