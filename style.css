@@ -368,8 +368,8 @@ li a:hover {
 		border-bottom: 1px solid grey;
 		box-shadow: 20px 20px;
 }
-.desp p{
-	text-align: justify;
+.desp h1{
+	
 		font-family: courier;
 		font-weight: bold;
 		color: black;
