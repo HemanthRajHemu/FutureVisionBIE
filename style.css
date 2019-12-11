@@ -470,7 +470,7 @@ input[type=visit]:hover {
 
 	.QAS a {
 			display: block;
-			color: #000;
+			color: #4000ff;
 			padding: 8px 16px;
 			text-decoration: none;
 			background-color: #c9c3c4;
@@ -484,7 +484,7 @@ input[type=visit]:hover {
 	.QAS h1 {
 			font-family:Bookman Old Style; 
 			font-size:20px;
-			color: #4000ff;
+			
 	}
 		 .QAS a:hover {
 			background-color: #555;
