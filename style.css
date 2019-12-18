@@ -1,4 +1,8 @@
-
+ads{
+	border-style: dotted;
+	border-color: red;
+	border-width: 5px;
+}
 header{
     padding: 1em;
     color: white;
