@@ -275,6 +275,8 @@ li a:hover {
     div.proc{
 	  font-size: 18px;
   }
+  
+  
   div.callout{
 	  bottom: 35px;
 	  right: 20px;
@@ -282,6 +284,16 @@ li a:hover {
 	  max-width: 300px;
   }
   div.callout-container {
+	  font-size:15px;
+  }
+  
+  div.calloutMsg{
+	  bottom: 35px;
+	  right: 20px;
+	  margin-left: 20px;
+	  max-width: 300px;
+  }
+  div.callout-containerMsg {
 	  font-size:15px;
   }
   div.ansclass {
@@ -319,6 +331,20 @@ li a:hover {
   div.proc{
 	  font-size: 12px;
   }
+  
+  
+  
+  div.calloutMsg{
+	  bottom: 5px;
+	  right: auto;
+	  margin-left: auto;
+	  max-width: auto;
+  }
+  div.callout-containerMsg {
+	  font-size:12px;
+  }
+  
+  
   div.callout{
 	  bottom: 5px;
 	  right: auto;
@@ -539,6 +565,28 @@ input[type=visit]:hover {
 
 
 /*----------------Call Out------------------------*/
+.calloutMsg {
+  position: fixed;
+  
+}
+
+.callout-headerMsg {
+  padding: 15px;
+  background: #555;
+  font-size: 15px;
+  color: white;
+  font-family: courier;
+}
+
+.callout-containerMsg {
+  padding: 15px;
+  background-color: #d6efff;
+  color: black;
+  font-family: courier;
+}
+
+
+
 .callout {
   position: fixed;
   
