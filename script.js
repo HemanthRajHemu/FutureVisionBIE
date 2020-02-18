@@ -7,6 +7,31 @@ function myFunction1() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
+  
+  //Get the button
+var mybuttonVARTOP = document.getElementById("myBtnTOP");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+    mybuttonVARTOP.style.display = "block";
+  } else {
+    mybuttonVARTOP.style.display = "none";
+  }
+}
+
+
+
+  
+  
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 function openNav() {
@@ -40,4 +65,5 @@ function show(id)
 
 document.oncontextmenu = new Function("return false;");
 //DONE TILL HERE
+
 
