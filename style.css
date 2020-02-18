@@ -39,6 +39,12 @@
 	border-color: red;
 	border-width: 5px;
 }
+.sem h1{
+	color:blue; 
+	font-family:courier; 
+	
+	text-align:center;
+}
 header{
     padding: 1em;
     color: white;
@@ -357,11 +363,16 @@ li a:hover {
   div.JCODE {
 	  font-size:15px;
   }
-  
+  div.sem {
+	  font-size:40px; 
+  }
   
 }
-
+/* Mobile*/
 @media screen and (max-width: 600px) {
+  div.sem{
+	  font-size:20px; 
+  }
   div.lii {
     font-size: 15px;
   }
