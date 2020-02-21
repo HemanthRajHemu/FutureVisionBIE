@@ -5,9 +5,9 @@ function myFunction1() {
 }
 
 function showPage() {
-  document.getElementById("NOTEID3").innerHTML = "Join the Telegram channel to get instant updates Link in the Menu TOP Left";
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
+  document.getElementById("NOTEID3").innerHTML = "Join the Telegram channel to get instant updates Link in the Menu TOP Left";
   
   //Get the button
 var mybuttonVARTOP = document.getElementById("myBtnTOP");
