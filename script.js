@@ -1,6 +1,7 @@
 var myVar;
 
 function myFunction1() {
+	document.getElementById("NOTEID3").innerHTML = "Join the Telegram channel to get instant updates Link in the Menu TOP Left";
   myVar = setTimeout(showPage, 300);
 }
 
