@@ -7,7 +7,7 @@ function myFunction1() {
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
-  document.getElementById("NOTEID3").innerHTML = "Join the Telegram channel to get instant updates Link in the Menu TOP Left";
+  document.getElementById("NOTEID3").innerHTML = "WAS THE CONTENT USEFUL, FOLLOW US ON INSTAGRAM @FUTUREVISIONBIE , DM US HOW U FEEL";
   
   //Get the button
 var mybuttonVARTOP = document.getElementById("myBtnTOP");
