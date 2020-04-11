@@ -25,7 +25,7 @@ function scrollFunction() {
 
 }
 function showPage1() {
-  document.getElementById("myDiv").style.display = "block";
+  document.getElementById("main").style.display = "block";
   document.getElementById("NOTEID3").innerHTML = "WAS THE CONTENT USEFUL, FOLLOW US ON INSTAGRAM @FUTUREVISIONBIE , DM & Let us Know your Experience";
   
   //Get the button
