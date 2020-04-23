@@ -310,6 +310,12 @@ li a:hover {
 			cursor: pointer;
 			font-weight: 300;
 		 } 
+		 em {
+			 display: inline;
+		 }		 
+		 strong {
+			 display: inline;
+		 }
 /*responsive text resizing*/
 @media screen and (min-width: 601px) {
   div.lii {
@@ -344,6 +350,15 @@ li a:hover {
   }
   div.ansclass {
 	  font-size:20px;
+  }
+  h2 {
+	  font-size:25px;
+	  display: inline;
+  }
+  h3{
+	  font-size:20px;
+	  display: inline;
+	  font-weight: normal;
   }
   h1.FVBIE {
 	  font-size:60px;
@@ -407,6 +422,15 @@ li a:hover {
   }
   div.ansclass {
 	  font-size:15px;
+  }
+  h2 {
+	  font-size:20px;
+	  display: inline;
+  }
+  h3{
+	  font-size:15px;
+	  display: inline;
+	  font-weight: normal;
   }
   h1.FVBIE {
 	  font-size: 25px;
