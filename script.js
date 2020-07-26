@@ -80,5 +80,12 @@ function show(id)
 
 document.oncontextmenu = new Function("return false;");
 //DONE TILL HERE
+function WhatsappShare() {
+    var url = window.location.href;
+    var api = "https://api.whatsapp.com/send?text=Hi,%20Buddy%20I%20found%20this%20Usefull%20Website%20named%20Future%20Vision%20BIE,%20One%20Stop%20Study%20Repository%20for%20VTU%20Students%0D%0ALink:"
+    var both = api + url;
+    //console.log(both);
+    window.open(both, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+}
 
 
